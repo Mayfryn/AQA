@@ -39,4 +39,4 @@ print(float(n) % 1)
 #Task6
 task_header(6)
 n = input("Enter real positive number:")
-print(int(float(n) % 1 *10 - float(n) % 1 *10 % 1))
+print(int(float(n) % 1 * 10 - float(n) % 1 * 10 % 1))
