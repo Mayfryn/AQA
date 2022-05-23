@@ -40,18 +40,6 @@ surname нету, 2. год рождения).
         return year - self.birth_year
 
 
-# if __name__ == '__main__':
-#     p1 = Person('Billie Bob', 1954)
-#     print(p1)
-#     print(p1.only_name())
-#     print(p1.only_surname())
-#     print(p1.age_in(2082))
-#
-#     p2 = Person("John Dou", 2078)
-#     p3 = Person("JaneDou", 1947)
-#     print(p2)
-
-
 class Employee(Person):
     """
     Employee (наследуемся от Person) (добавляются свойства: должность, опыт работы,
@@ -97,12 +85,6 @@ class Employee(Person):
         self.salary += delta
 
 
-# e1 = Employee('Billie Bob', 1954, "QA", 8, 500)
-# print(e1)
-# print(e1.upd_position())
-# e1.increase_salary(1000)
-# print(e1.salary)
-
 class ITEmployee(Employee):
     """
     ITEmployee (наследуемся от Employee)
@@ -117,21 +99,38 @@ class ITEmployee(Employee):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.skills = []
+        self.skill = []
 
     def __str__(self):
         return "{} is an IT employee.\nHe/She was born at {} and works as {} for a {} year(s).\nAnd has income as {}$ " \
                "per month.\nSkills: {}".format(
-            self.full_name, self.birth_year, self.position, self.experience, self.salary, self.skills)
+            self.full_name, self.birth_year, self.position, self.experience, self.salary, self.skill)
 
     def add_skill(self, skill):
-        self.skills.append(skill)
+        self.skill.append(skill)
 
-    def add_some_skills(self):
-        pass
+    def add_some_skills(self, new_skills):
+        self.skill += new_skills
 
 
-ite1 = ITEmployee('Billie Bob', 1954, "QA", 8, 500)
-ite1.add_skill("python")
-ite1.add_skill("git")
-print(ite1)
+if __name__ == '__main__':
+    p1 = Person('Billie Bob', 1954)
+    e1 = Employee('Billie Bob', 1954, "QA", 8, 500)
+    ite1 = ITEmployee('Billie Bob', 1954, "QA", 8, 500)
+    print(p1)
+    print(p1.only_name())
+    print(p1.only_surname())
+    print(p1.age_in(2082))
+    # p2 = Person("John Dou", 2078)
+    # p3 = Person("JaneDou", 1947)
+    print()
+    print(e1)
+    print(e1.upd_position())
+    e1.increase_salary(1000)
+    print(e1.salary)
+    print()
+    ite1.add_skill("python")
+    ite1.add_skill("git")
+    list1 = ["git", "python"]
+    ite1.add_some_skills(list1)
+    print(ite1)

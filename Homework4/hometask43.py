@@ -29,7 +29,7 @@ numb_word.task_header(5)
 
 def kind_triangle(a, b, c):
     if a + b > c and a + c > b and b + c > a:
-        print("Such triangle exicts!")
+        print("Such triangle exists!")
         if a == b or a == c or c == b:
             print("Isosceles triangle")
         elif a == b == c:
