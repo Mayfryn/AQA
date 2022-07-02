@@ -12,6 +12,9 @@ class TestFunctions(unittest.TestCase):
     def test_year_2024(self):
         self.assertEqual(is_year_leap(2024), True)
 
+    def test_year_2000(self):
+        self.assertEqual(is_year_leap(2000), False)
+
     def test_triangle_exist_000(self):
         self.assertEqual(is_triangle(0, 0, 0), False)
 
